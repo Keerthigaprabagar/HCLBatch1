@@ -10,7 +10,7 @@ It includes:
 
 ## How to run (Windows, Visual Studio)
 
-1. Extract this zip to a folder, open `InventoryManagement.sln` in Visual Studio 2022/2023.
+1. Open `InventoryManagement.sln` in Visual Studio 2022/2023.
 2. Open **Package Manager Console** (Tools → NuGet Package Manager → Package Manager Console).
 3. Run the commands to create migrations and database:
    ```powershell
@@ -23,11 +23,4 @@ It includes:
 5. Register a new user (Account → Register), then Login.
 6. Go to Products → Add Product, Warehouses → Add Warehouse, Inventory → Adjust stock.
 
-## Notes
-- Connection string is in `appsettings.json`. Default uses SQL Express:
-  `Server=.\\SQLEXPRESS;Database=InventoryDb;Trusted_Connection=True;`
-  Change if needed.
-- Passwords are hashed with SHA256 (simple hasher) for demo only. For production use ASP.NET Core Identity.
-- If you want, I can run through the exact commands step-by-step.
 
-Generated on: 2025-08-29T17:00:40.839165Z
