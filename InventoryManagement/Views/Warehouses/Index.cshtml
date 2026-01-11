@@ -1,0 +1,17 @@
+@model IEnumerable<InventoryManagement.Models.Warehouse>
+@{ ViewBag.Title = "Warehouses"; }
+<h2>Warehouses</h2>
+<p><a class="btn btn-success" href="/Warehouses/Create">Add Warehouse</a></p>
+<table class="table">
+<thead><tr><th>ID</th><th>Name</th><th>Location</th><th>Products</th></tr></thead>
+<tbody>
+@foreach(var w in Model) {
+  <tr>
+    <td>@w.Id</td>
+    <td>@w.Name</td>
+    <td>@w.Location</td>
+    <td>@(w.Products?.Count() ?? 0)</td>
+  </tr>
+}
+</tbody>
+</table>

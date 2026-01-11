@@ -1,0 +1,26 @@
+@model IEnumerable<InventoryManagement.Models.Product>
+@{ ViewBag.Title = "Products"; }
+<h2>Products</h2>
+<p><a class="btn btn-success" href="/Products/Create">Add Product</a></p>
+<table class="table">
+<thead><tr><th>ID</th><th>Name</th><th>SKU</th><th>Qty</th><th>Warehouse</th><th>Actions</th></tr></thead>
+<tbody>
+@foreach(var p in Model) {
+  <tr>
+    <td>@p.Id</td>
+    <td>@p.Name</td>
+    <td>@p.SKU</td>
+    <td>@p.Quantity</td>
+    <td>@p.Warehouse?.Name</td>
+    <td>
+      <a class="btn btn-sm btn-primary" href="/Products/Details/@p.Id">Details</a>
+      <a class="btn btn-sm btn-secondary" href="/Products/Edit/@p.Id">Edit</a>
+      <form method="post" action="/Products/Delete/@p.Id" style="display:inline">
+        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</button>
+      </form>
+      <a class="btn btn-sm btn-info" href="/Inventory/Adjust?productId=@p.Id">Adjust</a>
+    </td>
+  </tr>
+}
+</tbody>
+</table>

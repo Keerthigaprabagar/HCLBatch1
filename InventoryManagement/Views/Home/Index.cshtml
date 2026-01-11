@@ -1,0 +1,12 @@
+@{
+    ViewBag.Title = "Home";
+}
+<div class="jumbotron">
+  <h1>Inventory Management</h1>
+  <p class="lead">Manage products, warehouses and stock levels.</p>
+  @if (User.Identity?.IsAuthenticated ?? false) {
+    <p><a class="btn btn-primary" href="/Products">Go to Products</a></p>
+  } else {
+    <p><a class="btn btn-primary" href="/Account/Login">Login to continue</a></p>
+  }
+</div>

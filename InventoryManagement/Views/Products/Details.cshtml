@@ -1,0 +1,7 @@
+@model InventoryManagement.Models.Product
+@{ ViewBag.Title = "Product Details"; }
+<h2>@Model.Name</h2>
+<p><b>SKU:</b> @Model.SKU</p>
+<p><b>Quantity:</b> @Model.Quantity</p>
+<p><b>Warehouse:</b> @Model.Warehouse?.Name</p>
+<p><a href="/Products">Back</a></p>

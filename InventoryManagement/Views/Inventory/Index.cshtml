@@ -1,0 +1,17 @@
+@model IEnumerable<InventoryManagement.Models.InventoryItem>
+@{ ViewBag.Title = "Inventory History"; }
+<h2>Inventory Adjustments</h2>
+<table class="table">
+<thead><tr><th>ID</th><th>Product</th><th>Change</th><th>Note</th><th>Time (UTC)</th></tr></thead>
+<tbody>
+@foreach(var it in Model) {
+  <tr>
+    <td>@it.Id</td>
+    <td>@it.Product?.Name</td>
+    <td>@it.Change</td>
+    <td>@it.Note</td>
+    <td>@it.Timestamp.ToString("u")</td>
+  </tr>
+}
+</tbody>
+</table>
